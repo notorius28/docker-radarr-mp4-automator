@@ -21,17 +21,19 @@ RUN \
   pip install requests[security] && \
   pip install requests-cache && \
   pip install babelfish && \
-  pip install 'guessit<2' && \
-  pip install 'subliminal<2' && \
+  pip install guessit && \
+  pip install subliminal && \
   pip install stevedore==1.19.1 && \
   pip install python-dateutil && \
   pip install qtfaststart && \
   pip install tmdbsimple && \
+  pip install mutagen && \
   git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git /sickbeard_mp4_automator/ && \
   touch /sickbeard_mp4_automator/info.log && \
   chmod a+rwx -R /sickbeard_mp4_automator && \
   ln -s /downloads /data && \
   ln -s /config_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini && \
+  ln -snf /config_mp4_automator/plex_autoscan.py /sickbeard_mp4_automator/post_process/plex_autoscan.py && \
   rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \
